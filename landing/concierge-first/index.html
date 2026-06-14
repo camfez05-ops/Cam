@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Concierge First — Cut Corporate Travel Costs by up to 70%</title>
+<meta name="description" content="Concierge First is your outsourced corporate travel manager. We negotiate, book and manage your business travel globally — saving teams up to 70% with zero added headcount." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --color-primary:#0F172A;
+    --color-on-primary:#FFFFFF;
+    --color-secondary:#334155;
+    --color-accent:#0369A1;
+    --color-accent-hover:#075985;
+    --color-background:#F8FAFC;
+    --color-foreground:#020617;
+    --color-muted:#E8ECF1;
+    --color-border:#E2E8F0;
+    --color-success:#0E7A57;
+    --color-ring:#0F172A;
+
+    --font-head:"Lexend",system-ui,sans-serif;
+    --font-body:"Source Sans 3",system-ui,sans-serif;
+
+    --maxw:1200px;
+    --radius:14px;
+    --radius-lg:22px;
+    --shadow-sm:0 1px 2px rgba(2,6,23,.06),0 1px 3px rgba(2,6,23,.08);
+    --shadow-md:0 10px 25px -5px rgba(2,6,23,.10),0 8px 10px -6px rgba(2,6,23,.06);
+    --shadow-lg:0 25px 50px -12px rgba(2,6,23,.25);
+    --t:200ms cubic-bezier(.4,0,.2,1);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--color-foreground);
+    background:var(--color-background);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,h4{font-family:var(--font-head);line-height:1.12;color:var(--color-primary);margin:0;letter-spacing:-.02em}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block}
+  ::selection{background:var(--color-accent);color:#fff}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:var(--font-head);font-weight:600;font-size:.8rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--color-accent);margin-bottom:14px;
+  }
+  .section{padding:96px 0}
+  .section-head{max-width:680px;margin:0 auto 56px;text-align:center}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:16px}
+  .section-head p{font-size:1.12rem;color:var(--color-secondary)}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:0;
+    font-family:var(--font-head);font-weight:600;font-size:1rem;
+    padding:15px 28px;border-radius:999px;transition:transform var(--t),box-shadow var(--t),background var(--t);
+    min-height:52px;white-space:nowrap;
+  }
+  .btn:focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}
+  .btn-primary{background:var(--color-accent);color:#fff;box-shadow:var(--shadow-md)}
+  .btn-primary:hover{background:var(--color-accent-hover);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .btn-ghost{background:transparent;color:var(--color-primary);border:1.5px solid var(--color-border)}
+  .btn-ghost:hover{border-color:var(--color-primary);transform:translateY(-2px);background:#fff}
+  .btn-light{background:#fff;color:var(--color-primary)}
+  .btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .btn svg{width:18px;height:18px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:100;background:rgba(248,250,252,.82);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--t),box-shadow var(--t)}
+  header.scrolled{border-color:var(--color-border);box-shadow:var(--shadow-sm)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-head);font-weight:700;font-size:1.22rem;color:var(--color-primary)}
+  .brand .mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--color-primary),var(--color-accent));display:grid;place-items:center;box-shadow:var(--shadow-sm)}
+  .brand .mark svg{width:21px;height:21px;color:#fff}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-weight:500;color:var(--color-secondary);font-size:.98rem;transition:color var(--t)}
+  .nav-links a:hover{color:var(--color-primary)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .nav-cta .btn{padding:11px 22px;min-height:44px;font-size:.95rem}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;color:var(--color-primary);padding:8px}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:84px 0 72px}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(900px 480px at 78% -10%,rgba(3,105,161,.10),transparent 60%),
+    radial-gradient(700px 420px at 8% 110%,rgba(15,23,42,.06),transparent 55%);
+    pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--color-border);
+    padding:8px 15px;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--color-secondary);box-shadow:var(--shadow-sm);margin-bottom:24px}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--color-success);box-shadow:0 0 0 4px rgba(14,122,87,.15)}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,4rem);margin-bottom:22px}
+  .hero h1 .hl{position:relative;color:var(--color-accent);white-space:nowrap}
+  .hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.18em;background:rgba(3,105,161,.16);border-radius:4px;z-index:-1}
+  .hero p.lead{font-size:1.2rem;color:var(--color-secondary);max-width:540px;margin-bottom:34px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+  .hero-trust{display:flex;align-items:center;gap:14px;color:var(--color-secondary);font-size:.92rem}
+  .avatars{display:flex}
+  .avatars span{width:34px;height:34px;border-radius:50%;border:2px solid var(--color-background);margin-left:-10px;background:var(--color-muted);display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--color-secondary);font-family:var(--font-head)}
+  .avatars span:first-child{margin-left:0}
+  .stars{display:flex;gap:2px;color:#F59E0B}
+  .stars svg{width:16px;height:16px}
+
+  /* Hero savings card */
+  .savings-card{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:28px;position:relative}
+  .savings-card .sc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+  .savings-card .sc-head .label{font-family:var(--font-head);font-weight:600;color:var(--color-secondary);font-size:.9rem}
+  .badge-live{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;color:var(--color-success);background:rgba(14,122,87,.10);padding:5px 11px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+  .badge-live .dot{width:7px;height:7px;border-radius:50%;background:var(--color-success)}
+  .sc-big{font-family:var(--font-head);font-weight:700;font-size:3.4rem;color:var(--color-primary);line-height:1;margin-bottom:4px}
+  .sc-big span{color:var(--color-accent)}
+  .sc-sub{color:var(--color-secondary);font-size:.95rem;margin-bottom:22px}
+  .sc-bar{height:12px;border-radius:999px;background:var(--color-muted);overflow:hidden;margin-bottom:8px}
+  .sc-bar i{display:block;height:100%;width:70%;border-radius:999px;background:linear-gradient(90deg,var(--color-accent),#0EA5E9)}
+  .sc-legend{display:flex;justify-content:space-between;font-size:.8rem;color:var(--color-secondary);margin-bottom:24px}
+  .sc-rows{display:grid;gap:12px}
+  .sc-row{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border:1px solid var(--color-border);border-radius:12px;transition:border-color var(--t),transform var(--t)}
+  .sc-row:hover{border-color:var(--color-accent);transform:translateX(3px)}
+  .sc-row .l{display:flex;align-items:center;gap:11px;font-weight:500;font-size:.95rem}
+  .sc-row .ic{width:34px;height:34px;border-radius:9px;background:var(--color-muted);display:grid;place-items:center;color:var(--color-accent)}
+  .sc-row .ic svg{width:18px;height:18px}
+  .sc-row .v{font-family:var(--font-head);font-weight:700;color:var(--color-success)}
+
+  /* Logos */
+  .logos{padding:46px 0;border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);background:#fff}
+  .logos p{text-align:center;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--color-secondary);font-weight:600;margin-bottom:26px}
+  .logo-row{display:flex;align-items:center;justify-content:center;gap:clamp(28px,6vw,68px);flex-wrap:wrap;opacity:.72}
+  .logo-row .lg{font-family:var(--font-head);font-weight:700;font-size:1.25rem;color:var(--color-secondary);letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+  .logo-row .lg svg{width:22px;height:22px;color:var(--color-secondary)}
+
+  /* Stats */
+  .stats{background:var(--color-primary);color:#fff}
+  .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;text-align:center}
+  .stat .num{font-family:var(--font-head);font-weight:700;font-size:clamp(2.2rem,4.5vw,3.2rem);line-height:1;background:linear-gradient(180deg,#fff,#cbd5e1);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+  .stat .lbl{color:#94A3B8;font-size:.98rem;font-weight:500}
+
+  /* Feature grid */
+  .features .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:32px;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:#cdd7e3}
+  .card .ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,rgba(3,105,161,.12),rgba(15,23,42,.06));display:grid;place-items:center;color:var(--color-accent);margin-bottom:20px}
+  .card .ic svg{width:26px;height:26px}
+  .card h3{font-size:1.28rem;margin-bottom:10px}
+  .card p{color:var(--color-secondary)}
+
+  /* How it works */
+  .how{background:#fff}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:step}
+  .step{position:relative;padding-top:14px}
+  .step .n{counter-increment:step;width:50px;height:50px;border-radius:14px;background:var(--color-primary);color:#fff;display:grid;place-items:center;font-family:var(--font-head);font-weight:700;font-size:1.25rem;margin-bottom:18px}
+  .step .n::before{content:"0" counter(step)}
+  .step h3{font-size:1.18rem;margin-bottom:9px}
+  .step p{color:var(--color-secondary);font-size:.98rem}
+  .step:not(:last-child)::after{content:"";position:absolute;top:38px;left:64px;right:-13px;height:2px;background:repeating-linear-gradient(90deg,var(--color-border) 0 8px,transparent 8px 16px)}
+
+  /* Comparison */
+  .compare .panel{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);background:#fff}
+  .compare .col{padding:38px}
+  .compare .col.cf{background:var(--color-primary);color:#fff}
+  .compare .col h3{font-size:1.35rem;margin-bottom:6px}
+  .compare .col.cf h3{color:#fff}
+  .compare .col .tag{font-size:.85rem;font-weight:600;color:var(--color-secondary);margin-bottom:24px;display:block}
+  .compare .col.cf .tag{color:#94A3B8}
+  .compare ul{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+  .compare li{display:flex;gap:12px;align-items:flex-start;font-size:1rem}
+  .compare li svg{width:21px;height:21px;flex:none;margin-top:2px}
+  .compare .col li svg{color:#94A3B8}
+  .compare .col.cf li svg{color:#34D399}
+
+  /* Testimonial */
+  .quote{background:linear-gradient(135deg,var(--color-primary),#1E293B);color:#fff;border-radius:var(--radius-lg);padding:clamp(40px,6vw,70px);text-align:center;position:relative;overflow:hidden}
+  .quote::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% -20%,rgba(3,105,161,.35),transparent 60%)}
+  .quote .mark{position:relative;font-family:var(--font-head);font-size:4rem;line-height:0;color:var(--color-accent);opacity:.6;height:30px}
+  .quote blockquote{position:relative;font-family:var(--font-head);font-weight:500;font-size:clamp(1.3rem,3vw,1.9rem);line-height:1.4;max-width:860px;margin:0 auto 28px;letter-spacing:-.01em}
+  .quote .who{position:relative;display:flex;align-items:center;justify-content:center;gap:14px}
+  .quote .who .av{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--color-accent),#0EA5E9);display:grid;place-items:center;font-family:var(--font-head);font-weight:700;font-size:1.05rem}
+  .quote .who .meta{text-align:left}
+  .quote .who .meta b{display:block;font-family:var(--font-head)}
+  .quote .who .meta span{color:#94A3B8;font-size:.92rem}
+
+  /* CTA / form */
+  .cta-final{background:var(--color-primary)}
+  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .cta-grid .copy h2{color:#fff;font-size:clamp(2rem,4vw,2.9rem);margin-bottom:18px}
+  .cta-grid .copy p{color:#94A3B8;font-size:1.12rem;margin-bottom:28px}
+  .cta-list{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .cta-list li{display:flex;gap:12px;align-items:center;color:#E2E8F0}
+  .cta-list li svg{width:22px;height:22px;color:#34D399;flex:none}
+  .form-card{background:#fff;border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow-lg)}
+  .form-card h3{font-size:1.4rem;margin-bottom:6px}
+  .form-card .sub{color:var(--color-secondary);font-size:.96rem;margin-bottom:24px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-family:var(--font-head);font-weight:600;font-size:.88rem;color:var(--color-primary);margin-bottom:7px}
+  .field label .req{color:var(--color-accent)}
+  .field input,.field select{width:100%;padding:13px 15px;border:1.5px solid var(--color-border);border-radius:11px;font-family:var(--font-body);font-size:1rem;color:var(--color-foreground);background:#fff;transition:border-color var(--t),box-shadow var(--t);min-height:50px}
+  .field input:focus,.field select:focus{outline:0;border-color:var(--color-accent);box-shadow:0 0 0 4px rgba(3,105,161,.12)}
+  .form-card .btn{width:100%;justify-content:center;margin-top:6px}
+  .form-note{text-align:center;font-size:.84rem;color:var(--color-secondary);margin-top:14px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+  /* Footer */
+  footer{background:#020617;color:#94A3B8;padding:64px 0 32px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+  .foot-grid .brand{color:#fff;margin-bottom:16px}
+  .foot-about{font-size:.95rem;max-width:300px}
+  .foot-col h4{color:#fff;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;font-weight:600}
+  .foot-col a{display:block;margin-bottom:11px;font-size:.96rem;transition:color var(--t)}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid #1E293B;padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:.88rem}
+  .foot-social{display:flex;gap:12px}
+  .foot-social a{width:38px;height:38px;border-radius:10px;border:1px solid #1E293B;display:grid;place-items:center;transition:background var(--t),border-color var(--t)}
+  .foot-social a:hover{background:#1E293B;border-color:#334155}
+  .foot-social svg{width:18px;height:18px}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Responsive */
+  @media (max-width:980px){
+    .hero-grid,.cta-grid{grid-template-columns:1fr;gap:46px}
+    .features .grid{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .step:not(:last-child)::after{display:none}
+    .stats .grid{grid-template-columns:repeat(2,1fr);gap:36px 20px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:680px){
+    .section{padding:68px 0}
+    .nav-links{display:none}
+    .nav-cta .btn-ghost{display:none}
+    .menu-toggle{display:block}
+    .features .grid,.steps,.compare .panel{grid-template-columns:1fr}
+    .form-row{grid-template-columns:1fr}
+    .hero h1 .hl{white-space:normal}
+    .foot-grid{grid-template-columns:1fr}
+    .foot-bottom{justify-content:center;text-align:center}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="Concierge First home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </span>
+      Concierge&nbsp;First
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#services">Services</a>
+      <a href="#savings">Savings</a>
+      <a href="#why">Why us</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#contact">Sign in</a>
+      <a class="btn btn-primary" href="#contact">Book a consultation</a>
+      <button class="menu-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="pill"><span class="dot" aria-hidden="true"></span> Trusted corporate travel partner · 60+ countries</span>
+      <h1>Cut your corporate travel spend by <span class="hl">up to 70%</span></h1>
+      <p class="lead">Concierge First becomes your dedicated, outsourced travel manager — negotiating rates, booking every trip and managing your global travel programme, so your team never overpays again.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Get your free savings audit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <div class="hero-trust">
+        <div class="avatars" aria-hidden="true">
+          <span>AK</span><span>RM</span><span>JD</span><span>SL</span>
+        </div>
+        <div>
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17.3 5.8 20.6l1.6-6.7L2.2 8.9l6.9-.6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17.3 5.8 20.6l1.6-6.7L2.2 8.9l6.9-.6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17.3 5.8 20.6l1.6-6.7L2.2 8.9l6.9-.6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17.3 5.8 20.6l1.6-6.7L2.2 8.9l6.9-.6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17.3 5.8 20.6l1.6-6.7L2.2 8.9l6.9-.6z"/></svg>
+          </div>
+          <strong>Rated 4.9/5</strong> by finance &amp; operations leaders
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="savings-card" role="img" aria-label="Example annual travel savings of 70 percent across flights, hotels, ground transport and fees">
+        <div class="sc-head">
+          <span class="label">Annual travel spend · Acme Ltd</span>
+          <span class="badge-live"><span class="dot" aria-hidden="true"></span> Optimised</span>
+        </div>
+        <div class="sc-big" data-count="70" data-suffix="%">0%</div>
+        <div class="sc-sub">average reduction after switching to Concierge First</div>
+        <div class="sc-bar"><i></i></div>
+        <div class="sc-legend"><span>Before: £480k</span><span>After: £144k</span></div>
+        <div class="sc-rows">
+          <div class="sc-row">
+            <span class="l"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-1 .1-1.4.5l-.4.4c-.6.6-.5 1.5.2 2L8 12l-2 2H4l-1 1 3 2 2 3 1-1v-2l2-2 3.9 4.8c.5.7 1.4.8 2 .2l.4-.4c.4-.4.6-.9.5-1.4z"/></svg></span> Flights</span>
+            <span class="v">−68%</span>
+          </div>
+          <div class="sc-row">
+            <span class="l"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14"/><path d="M3 21h18"/><path d="M8 9h.01M12 9h.01M16 9h.01M8 13h.01M12 13h.01M16 13h.01"/></svg></span> Hotels &amp; stays</span>
+            <span class="v">−72%</span>
+          </div>
+          <div class="sc-row">
+            <span class="l"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2M7 17v2M17 17v2M3 11h18"/></svg></span> Ground transport</span>
+            <span class="v">−61%</span>
+          </div>
+          <div class="sc-row">
+            <span class="l"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Booking &amp; admin fees</span>
+            <span class="v">−100%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section class="logos reveal">
+  <div class="wrap">
+    <p>Managing travel for ambitious teams worldwide</p>
+    <div class="logo-row">
+      <span class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>Northgate</span>
+      <span class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>Meridian</span>
+      <span class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/></svg>Vertex&nbsp;Co</span>
+      <span class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V8l8-5 8 5v12M9 20v-6h6v6"/></svg>Halcyon</span>
+      <span class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0zM3 12h18"/></svg>Orbital</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats section">
+  <div class="wrap">
+    <div class="grid">
+      <div class="stat reveal"><div class="num" data-count="70" data-suffix="%">0</div><div class="lbl">Average savings on travel spend</div></div>
+      <div class="stat reveal"><div class="num" data-count="60" data-suffix="+">0</div><div class="lbl">Countries we book &amp; manage</div></div>
+      <div class="stat reveal"><div class="num" data-count="24" data-suffix="/7">0</div><div class="lbl">Live traveller support</div></div>
+      <div class="stat reveal"><div class="num" data-count="0" data-prefix="£" data-suffix="">0</div><div class="lbl">Setup &amp; subscription fees</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / FEATURES -->
+<section class="features section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Your full travel department</div>
+      <h2>Everything a corporate travel manager does — handled for you</h2>
+      <p>We don't just find cheaper fares. We run your entire travel programme end to end, so your people travel better and your finance team finally has control.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+        <h3>Up to 70% cost reduction</h3>
+        <p>We leverage negotiated corporate rates, consolidated buying power and fare intelligence to slash what you spend on flights, hotels and ground transport.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>A dedicated travel manager</h3>
+        <p>One named point of contact who knows your policy, your people and your preferences — booking, rebooking and optimising every trip on your behalf.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Global coverage, local rates</h3>
+        <p>From London to Singapore, we book in 60+ countries with on-the-ground supplier relationships — so you get local pricing wherever your team lands.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Policy &amp; spend control</h3>
+        <p>We enforce your travel policy automatically, flag out-of-policy bookings and give finance clean, consolidated reporting on every pound spent.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>24/7 traveller support</h3>
+        <p>Cancelled flight at 2am? We handle it. Your travellers reach a real person, any time zone, who rebooks instantly and keeps the trip on track.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01"/></svg></div>
+        <h3>Effortless onboarding</h3>
+        <p>Go live in days, not months. We migrate your bookers, profiles and policy — no new software for your team to learn, no disruption to trips in progress.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how section" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">How it works</div>
+      <h2>From overspending to optimised in four steps</h2>
+      <p>A simple, fixed process that gets you saving fast — with zero upfront cost and no long-term lock-in.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n" aria-hidden="true"></div><h3>Free savings audit</h3><p>Send us 3 months of travel spend. We benchmark it and show you exactly where — and how much — you're overpaying.</p></div>
+      <div class="step reveal"><div class="n" aria-hidden="true"></div><h3>We become your manager</h3><p>We migrate your profiles, policy and preferred suppliers, and assign your dedicated travel manager and support team.</p></div>
+      <div class="step reveal"><div class="n" aria-hidden="true"></div><h3>Book through us</h3><p>Your team requests trips as normal. We source the best-value option within policy and handle every booking, change and cancellation.</p></div>
+      <div class="step reveal"><div class="n" aria-hidden="true"></div><h3>Watch the savings land</h3><p>Get monthly reporting on spend, savings and policy compliance — typically 40–70% lower than before, every single month.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare section" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why Concierge First</div>
+      <h2>An in-house travel desk, without the overhead</h2>
+      <p>Get the expertise and buying power of a full travel department — at a fraction of the cost of hiring one.</p>
+    </div>
+    <div class="panel reveal">
+      <div class="col">
+        <h3>Managing it yourself</h3>
+        <span class="tag">The status quo</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Staff booking flights between meetings, paying public rates</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Expense chaos and no visibility on total spend</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> No leverage to negotiate corporate rates</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Nobody on call when a trip goes wrong</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> £50k+/yr to hire a dedicated travel manager</li>
+        </ul>
+      </div>
+      <div class="col cf">
+        <h3>With Concierge First</h3>
+        <span class="tag">Your outsourced travel team</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Every trip booked at negotiated corporate rates</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> One consolidated invoice and live spend reporting</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Up to 70% lower travel costs, guaranteed in writing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 24/7 support that rebooks instantly, anywhere</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No headcount, no setup fee — we earn from the savings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section" id="savings">
+  <div class="wrap reveal">
+    <div class="quote">
+      <div class="mark" aria-hidden="true">&ldquo;</div>
+      <blockquote>Concierge First cut our travel budget by 67% in the first quarter. They genuinely run it like our own department — we just stopped worrying about travel entirely.</blockquote>
+      <div class="who">
+        <span class="av" aria-hidden="true">SL</span>
+        <div class="meta">
+          <b>Sarah Lindqvist</b>
+          <span>CFO, Northgate Consulting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / FORM -->
+<section class="cta-final section" id="contact">
+  <div class="wrap cta-grid">
+    <div class="copy reveal">
+      <h2>See exactly how much you could save</h2>
+      <p>Book a 20-minute consultation and we'll run a free, no-obligation audit of your current travel spend — and show you the savings in real numbers.</p>
+      <ul class="cta-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Free savings audit, no commitment</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No setup fees or software to install</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Go live in days — savings from month one</li>
+      </ul>
+    </div>
+    <div class="form-card reveal">
+      <h3>Get your free savings audit</h3>
+      <p class="sub">Tell us a little about your team and we'll be in touch within one business day.</p>
+      <form id="leadForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="field">
+            <label for="company">Company <span class="req" aria-hidden="true">*</span></label>
+            <input id="company" name="company" type="text" autocomplete="organization" placeholder="Acme Ltd" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Work email <span class="req" aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="jane@company.com" required />
+        </div>
+        <div class="field">
+          <label for="spend">Estimated annual travel spend</label>
+          <select id="spend" name="spend">
+            <option value="">Select a range</option>
+            <option>Under £50k</option>
+            <option>£50k – £250k</option>
+            <option>£250k – £1m</option>
+            <option>£1m+</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Book my free audit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="form-note">We'll never share your details. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#" aria-label="Concierge First home">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </span>
+          Concierge&nbsp;First
+        </a>
+        <p class="foot-about">Your outsourced corporate travel manager — saving global teams up to 70% on business travel, with a dedicated manager and 24/7 support.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#how">How it works</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="https://www.concierge-first.com">Main site</a>
+      </div>
+      <div class="foot-col">
+        <h4>Solutions</h4>
+        <a href="#services">Cost reduction</a>
+        <a href="#services">Travel management</a>
+        <a href="#services">Policy &amp; reporting</a>
+        <a href="#services">24/7 support</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="#contact">Book a consultation</a>
+        <a href="mailto:hello@concierge-first.com">hello@concierge-first.com</a>
+        <a href="#contact">Request a savings audit</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Concierge First. All rights reserved.</span>
+      <div class="foot-social">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-7-6.2 7H1.4l8.1-9.3L1 2h7l4.9 6.5zm-1.2 18h1.9L7.1 4H5z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky header shadow
+  var header = document.getElementById('header');
+  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Scroll reveal
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  // Animated counters
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count')) || 0;
+    var suffix = el.getAttribute('data-suffix') || '';
+    var prefix = el.getAttribute('data-prefix') || '';
+    if (reduced){ el.textContent = prefix + target + suffix; return; }
+    var dur = 1400, start = performance.now();
+    function tick(now){
+      var p = Math.min((now - start)/dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var counted = new WeakSet();
+  var counters = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && !counted.has(e.target)){ counted.add(e.target); animateCount(e.target); }
+      });
+    }, {threshold:0.5});
+    counters.forEach(function(el){ cio.observe(el); });
+  } else {
+    counters.forEach(animateCount);
+  }
+
+  // Mobile menu (smooth-scroll fallback to contact)
+  document.querySelector('.menu-toggle').addEventListener('click', function(){
+    document.getElementById('contact').scrollIntoView({behavior: reduced ? 'auto':'smooth'});
+  });
+
+  // Demo form handling
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var firstInvalid = this.querySelector('input:invalid');
+    if (firstInvalid){ firstInvalid.focus(); return; }
+    var btn = this.querySelector('button[type=submit]');
+    btn.textContent = 'Thanks — we’ll be in touch ✓';
+    btn.style.background = '#0E7A57';
+    btn.disabled = true;
+  });
+</script>
+</body>
+</html>
